@@ -8,7 +8,7 @@ body{
 
 font-family:'Poppins', sans-serif;
 
-background:linear-gradient(135deg,#0a1a35,#0f2b5b);
+background:linear-gradient(135deg,#0a1a35,#112a55);
 
 color:white;
 
@@ -36,9 +36,9 @@ margin-bottom:10px;
 
 .subtitle{
 
-font-size:1.2rem;
-
 color:#cbd5e1;
+
+font-size:1.2rem;
 
 }
 
@@ -50,17 +50,17 @@ max-width:1000px;
 
 margin:auto;
 
-padding:50px 20px;
+padding:60px 20px;
 
 }
 
 h2{
 
+text-align:center;
+
 font-size:2rem;
 
-margin-bottom:20px;
-
-text-align:center;
+margin-bottom:30px;
 
 }
 
@@ -68,11 +68,45 @@ text-align:center;
 
 .about p{
 
-margin-bottom:15px;
-
 text-align:center;
 
+margin-bottom:15px;
+
 color:#d1d5db;
+
+}
+
+/* TECNOLOGIAS */
+
+.tech-container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.tech-item{
+
+background:#1b3a73;
+
+padding:10px 18px;
+
+border-radius:20px;
+
+font-size:0.9rem;
+
+transition:0.3s;
+
+}
+
+.tech-item:hover{
+
+background:#3c6fe0;
 
 }
 
@@ -80,7 +114,11 @@ color:#d1d5db;
 
 #projetos{
 
-text-align:center;
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
 
 }
 
@@ -92,15 +130,15 @@ padding:25px;
 
 border-radius:10px;
 
-margin:20px;
+transition:0.3s;
 
-transition:transform 0.3s, box-shadow 0.3s;
+text-align:center;
 
 }
 
 .projeto:hover{
 
-transform:translateY(-5px);
+transform:translateY(-8px);
 
 box-shadow:0 10px 25px rgba(0,0,0,0.5);
 
@@ -114,9 +152,9 @@ margin-bottom:10px;
 
 .projeto p{
 
-margin-bottom:15px;
-
 color:#cbd5e1;
+
+margin-bottom:15px;
 
 }
 
@@ -136,6 +174,8 @@ text-decoration:none;
 
 font-size:0.9rem;
 
+transition:0.3s;
+
 }
 
 .projeto a:hover{
@@ -144,45 +184,33 @@ background:#5a86f0;
 
 }
 
-/* GRID DOS PROJETOS */
-
-#projetos{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
 /* CONTATO */
 
-.contact ul{
+.icons{
 
-list-style:none;
+display:flex;
 
-text-align:center;
+justify-content:center;
 
-}
+gap:25px;
 
-.contact li{
-
-margin:10px 0;
+font-size:2rem;
 
 }
 
-.contact a{
+.icons a{
 
-color:#7ea6ff;
+color:white;
 
-text-decoration:none;
+transition:0.3s;
 
 }
 
-.contact a:hover{
+.icons a:hover{
 
-text-decoration:underline;
+color:#3c6fe0;
+
+transform:scale(1.2);
 
 }
 
@@ -192,7 +220,7 @@ footer{
 
 text-align:center;
 
-padding:30px;
+padding:40px;
 
 color:#94a3b8;
 
