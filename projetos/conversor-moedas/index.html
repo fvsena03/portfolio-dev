@@ -14,20 +14,22 @@
 
 <body>
 
+<div class="background"></div>
+
 <div class="conversor">
 
 <h1>Conversor de Moedas</h1>
 
-<input type="number" id="valor" placeholder="Digite o valor">
+<input type="number" id="valor" placeholder="Digite o valor em Real (R$)">
 
 <select id="moeda">
-<option value="dolar">Real → Dólar</option>
-<option value="euro">Real → Euro</option>
+<option value="dolar">Converter para Dólar</option>
+<option value="euro">Converter para Euro</option>
 </select>
 
 <button onclick="converter()">Converter</button>
 
-<h2 id="resultado"></h2>
+<div id="resultado"></div>
 
 </div>
 
