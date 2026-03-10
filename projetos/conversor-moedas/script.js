@@ -4,13 +4,14 @@ let valor = document.getElementById("valor").value
 let moeda = document.getElementById("moeda").value
 let resultado = document.getElementById("resultado")
 
-let dolar = 5.00
-let euro = 5.40
+/* valores atualizados */
+
+let dolar = 5.21
+let euro = 5.65
 
 if(valor === ""){
 
 resultado.innerHTML = "Digite um valor."
-
 return
 
 }
