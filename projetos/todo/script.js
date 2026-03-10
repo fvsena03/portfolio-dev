@@ -1,48 +1,36 @@
 function adicionarTarefa(){
 
-const tarefa = document.getElementById("tarefa").value
-const horario = document.getElementById("horario").value
+let tarefa = document.getElementById("tarefa").value
+let horario = document.getElementById("horario").value
+let lista = document.getElementById("lista")
 
-if(tarefa === ""){
-alert("Digite uma tarefa")
-return
-}
+if(tarefa === "") return
 
-const lista = document.getElementById("lista")
+let li = document.createElement("li")
 
-const item = document.createElement("li")
+li.innerHTML = `
+<span onclick="marcarConcluida(this)">
+${tarefa} - ${horario}
+</span>
 
-item.innerHTML = `
-<span>${tarefa} - ${horario}</span>
-
-<div class="acoes">
-
-<button onclick="concluir(this)">✔</button>
-
-<button class="remover" onclick="remover(this)">X</button>
-
-</div>
+<span class="remover" onclick="removerTarefa(this)">X</span>
 `
 
-lista.appendChild(item)
+lista.appendChild(li)
 
-document.getElementById("tarefa").value=""
-document.getElementById("horario").value=""
-
-}
-
-function concluir(botao){
-
-const tarefa = botao.parentElement.parentElement
-
-tarefa.classList.toggle("concluida")
+document.getElementById("tarefa").value = ""
+document.getElementById("horario").value = ""
 
 }
 
-function remover(botao){
+function marcarConcluida(elemento){
 
-const tarefa = botao.parentElement.parentElement
+elemento.classList.toggle("concluida")
 
-tarefa.remove()
+}
+
+function removerTarefa(elemento){
+
+elemento.parentElement.remove()
 
 }
