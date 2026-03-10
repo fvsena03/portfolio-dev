@@ -1,23 +1,33 @@
 function converter(){
 
 let valor = document.getElementById("valor").value
-
 let moeda = document.getElementById("moeda").value
-
 let resultado = document.getElementById("resultado")
 
-let taxaDolar = 5.00
-let taxaEuro = 5.40
+let dolar = 5.00
+let euro = 5.40
+
+if(valor === ""){
+
+resultado.innerHTML = "Digite um valor."
+
+return
+
+}
 
 if(moeda === "dolar"){
 
-resultado.innerHTML = "US$ " + (valor / taxaDolar).toFixed(2)
+let conversao = valor / dolar
+
+resultado.innerHTML = "US$ " + conversao.toFixed(2)
 
 }
 
 else{
 
-resultado.innerHTML = "€ " + (valor / taxaEuro).toFixed(2)
+let conversao = valor / euro
+
+resultado.innerHTML = "€ " + conversao.toFixed(2)
 
 }
 
