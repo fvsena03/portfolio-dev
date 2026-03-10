@@ -1,36 +1,45 @@
 function adicionarTarefa(){
 
-let tarefa = document.getElementById("tarefa").value
-let horario = document.getElementById("horario").value
+let tarefaInput = document.getElementById("tarefa")
+let horaInput = document.getElementById("hora")
 let lista = document.getElementById("lista")
 
-if(tarefa === "") return
+let tarefa = tarefaInput.value
+let hora = horaInput.value
+
+if(tarefa === ""){
+
+alert("Digite uma tarefa")
+
+return
+
+}
 
 let li = document.createElement("li")
 
-li.innerHTML = `
-<span onclick="marcarConcluida(this)">
-${tarefa} - ${horario}
-</span>
+let texto = document.createElement("span")
 
-<span class="remover" onclick="removerTarefa(this)">X</span>
-`
+texto.innerHTML = tarefa + " - " + hora
+
+let check = document.createElement("span")
+
+check.innerHTML = "✔"
+
+check.classList.add("check")
+
+check.onclick = function(){
+
+texto.classList.toggle("concluida")
+
+}
+
+li.appendChild(check)
+
+li.appendChild(texto)
 
 lista.appendChild(li)
 
-document.getElementById("tarefa").value = ""
-document.getElementById("horario").value = ""
-
-}
-
-function marcarConcluida(elemento){
-
-elemento.classList.toggle("concluida")
-
-}
-
-function removerTarefa(elemento){
-
-elemento.parentElement.remove()
+tarefaInput.value = ""
+horaInput.value = ""
 
 }
