@@ -2,7 +2,20 @@ function gerarSenha(){
 
 let tamanho = document.getElementById("tamanho").value
 
-let caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*"
+let usarMaiusculas = document.getElementById("maiusculas").checked
+let usarNumeros = document.getElementById("numeros").checked
+let usarSimbolos = document.getElementById("simbolos").checked
+
+let letras = "abcdefghijklmnopqrstuvwxyz"
+let maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let numeros = "0123456789"
+let simbolos = "!@#$%&*"
+
+let caracteres = letras
+
+if(usarMaiusculas) caracteres += maiusculas
+if(usarNumeros) caracteres += numeros
+if(usarSimbolos) caracteres += simbolos
 
 let senha = ""
 
@@ -16,6 +29,8 @@ senha += caracteres[random]
 
 document.getElementById("senha").value = senha
 
+avaliarForca(senha)
+
 }
 
 function copiarSenha(){
@@ -27,5 +42,29 @@ campo.select()
 document.execCommand("copy")
 
 alert("Senha copiada!")
+
+}
+
+function avaliarForca(senha){
+
+let forca = document.getElementById("forca")
+
+if(senha.length < 8){
+
+forca.innerHTML = "Força da senha: fraca"
+
+}
+
+else if(senha.length < 12){
+
+forca.innerHTML = "Força da senha: média"
+
+}
+
+else{
+
+forca.innerHTML = "Força da senha: forte"
+
+}
 
 }
